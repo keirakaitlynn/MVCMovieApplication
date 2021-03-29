@@ -7,7 +7,7 @@
 <h2>IndexJKJK</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="CreateJK">CreateJK New</a>
 </p>
 
 <form asp-controller="MoviesJK" asp-action="IndexJK" method="get">
@@ -60,9 +60,9 @@
                 @Html.DisplayFor(modelItem => item.Rating)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="EditJK" asp-route-id="@item.Id">EditJK</a> |
+                <a asp-action="DetailsJK" asp-route-id="@item.Id">DetailsJK</a> |
+                <a asp-action="DeleteJK" asp-route-id="@item.Id">DeleteJK</a>
             </td>
         </tr>
 }

@@ -55,8 +55,8 @@ namespace MvcMovie.Controllers
             return "From [HttpPost]IndexJK: filter on " + searchString;
         }
 
-        // GET: Movies/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Movies/DetailsJK/5
+        public async Task<IActionResult> DetailsJK(int? id)
         {
             if (id == null)
             {
@@ -73,18 +73,18 @@ namespace MvcMovie.Controllers
             return View(movie);
         }
 
-        // GET: Movies/Create
-        public IActionResult Create()
+        // GET: Movies/CreateJK
+        public IActionResult CreateJK()
         {
             return View();
         }
 
-        // POST: Movies/Create
+        // POST: Movies/CreateJK
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] MovieJK movieJk)
+        public async Task<IActionResult> CreateJK([Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] MovieJK movieJk)
         {
             if (ModelState.IsValid)
             {
@@ -95,8 +95,8 @@ namespace MvcMovie.Controllers
             return View(movieJk);
         }
 
-        // GET: Movies/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // GET: Movies/EditJK/5
+        public async Task<IActionResult> EditJK(int? id)
         {
             if (id == null)
             {
@@ -111,12 +111,12 @@ namespace MvcMovie.Controllers
             return View(movie);
         }
 
-        // POST: Movies/Edit/5
+        // POST: Movies/EditJK/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] MovieJK movieJk)
+        public async Task<IActionResult> EditJK(int id, [Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] MovieJK movieJk)
         {
             if (id != movieJk.Id)
             {
@@ -132,7 +132,7 @@ namespace MvcMovie.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movieJk.Id))
+                    if (!MovieExistsJK(movieJk.Id))
                     {
                         return NotFound();
                     }
@@ -146,8 +146,8 @@ namespace MvcMovie.Controllers
             return View(movieJk);
         }
 
-        // GET: Movies/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: Movies/DeleteJK/5
+        public async Task<IActionResult> DeleteJK(int? id)
         {
             if (id == null)
             {
@@ -164,10 +164,10 @@ namespace MvcMovie.Controllers
             return View(movie);
         }
 
-        // POST: Movies/Delete/5
+        // POST: Movies/DeleteJK/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id, bool notUsed)
+        public async Task<IActionResult> DeleteJK(int id, bool notUsed)
         {
             var movie = await _context.Movie.FindAsync(id);
             _context.Movie.Remove(movie);
@@ -175,7 +175,7 @@ namespace MvcMovie.Controllers
             return RedirectToAction(nameof(IndexJK));
         }
 
-        private bool MovieExists(int id)
+        private bool MovieExistsJK(int id)
         {
             return _context.Movie.Any(e => e.Id == id);
         }
