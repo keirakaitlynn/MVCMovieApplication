@@ -5,7 +5,7 @@ namespace MvcMovie.Controllers
 {
     public class HelloWorldJKController : Controller
     {
-        public IActionResult Index()
+        public IActionResult IndexJK()
         {
             return View();
         }

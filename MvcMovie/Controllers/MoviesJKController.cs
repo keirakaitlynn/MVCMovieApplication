@@ -20,7 +20,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Movies
-        public async Task<IActionResult> Index(string movieGenre, string searchString)
+        public async Task<IActionResult> IndexJK(string movieGenre, string searchString)
         {
             // Use LINQ to get list of genres.
             IQueryable<string> genreQuery = from m in _context.Movie 
@@ -50,9 +50,9 @@ namespace MvcMovie.Controllers
         }
 
         [HttpPost]
-        public string Index(string searchString, bool notUsed)
+        public string IndexJK(string searchString, bool notUsed)
         {
-            return "From [HttpPost]Index: filter on " + searchString;
+            return "From [HttpPost]IndexJK: filter on " + searchString;
         }
 
         // GET: Movies/Details/5
@@ -90,7 +90,7 @@ namespace MvcMovie.Controllers
             {
                 _context.Add(movieJk);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexJK));
             }
             return View(movieJk);
         }
@@ -141,7 +141,7 @@ namespace MvcMovie.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexJK));
             }
             return View(movieJk);
         }
@@ -172,7 +172,7 @@ namespace MvcMovie.Controllers
             var movie = await _context.Movie.FindAsync(id);
             _context.Movie.Remove(movie);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(IndexJK));
         }
 
         private bool MovieExists(int id)
