@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcMovie.Models
 {
-    public class Movie
+    public class MovieJK
     {
         public int Id { get; set; }
 

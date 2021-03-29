@@ -8,7 +8,7 @@ namespace MvcMovie.Migrations
         {
             migrationBuilder.AddColumn<string>(
                 name: "Rating",
-                table: "Movie",
+                table: "MovieJK",
                 type: "nvarchar(max)",
                 nullable: true);
         }
@@ -17,7 +17,7 @@ namespace MvcMovie.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "Rating",
-                table: "Movie");
+                table: "MovieJK");
         }
     }
 }

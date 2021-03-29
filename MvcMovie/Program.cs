@@ -20,7 +20,7 @@ namespace MvcMovie
 
                 try
                 {
-                    SeedData.Initialize(services);
+                    SeedDataJK.Initialize(services);
                 }
                 catch (Exception ex)
                 {

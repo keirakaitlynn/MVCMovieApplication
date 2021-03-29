@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace MvcMovie.Models
 {
-    public static class SeedData
+    public static class SeedDataJK
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
@@ -21,7 +21,7 @@ namespace MvcMovie.Models
                 }
 
                 context.Movie.AddRange(
-                    new Movie
+                    new MovieJK
                     {
                         Title = "When Harry Met Sally",
                         ReleaseDate = DateTime.Parse("1989-2-12"),
@@ -30,7 +30,7 @@ namespace MvcMovie.Models
                         Price = 7.99M
                     },
 
-                    new Movie
+                    new MovieJK
                     {
                         Title = "Ghostbusters ",
                         ReleaseDate = DateTime.Parse("1984-3-13"),
@@ -39,7 +39,7 @@ namespace MvcMovie.Models
                         Price = 8.99M
                     },
 
-                    new Movie
+                    new MovieJK
                     {
                         Title = "Ghostbusters 2",
                         ReleaseDate = DateTime.Parse("1986-2-23"),
@@ -48,7 +48,7 @@ namespace MvcMovie.Models
                         Price = 9.99M
                     },
 
-                    new Movie
+                    new MovieJK
                     {
                         Title = "Rio Bravo",
                         ReleaseDate = DateTime.Parse("1959-4-15"),

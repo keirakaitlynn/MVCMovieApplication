@@ -56,7 +56,7 @@ namespace MvcMovie
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}"); 
+                    pattern: "{controller=HomeJK}/{action=Index}/{id?}"); 
                 // The default URL routing logic used by MVC, uses a format like this to determine what code to invoke:
                 // "/[Controller]/[ActionName]/[Parameters]"
             });
