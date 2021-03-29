@@ -23,13 +23,13 @@ namespace MvcMovie.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult PrivacyJK()
         {
             return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult ErrorJK()
         {
             return View(new ErrorViewModelJK { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
